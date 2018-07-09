@@ -1,0 +1,5 @@
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\直接利用SocketTCP开发的网络游戏CSharp\TCP服务器端\bin\Debug\TCP服务器端.exe.config
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\直接利用SocketTCP开发的网络游戏CSharp\TCP服务器端\bin\Debug\TCP服务器端.exe
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\直接利用SocketTCP开发的网络游戏CSharp\TCP服务器端\bin\Debug\TCP服务器端.pdb
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\直接利用SocketTCP开发的网络游戏CSharp\TCP服务器端\obj\Debug\TCP服务器端.exe
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\直接利用SocketTCP开发的网络游戏CSharp\TCP服务器端\obj\Debug\TCP服务器端.pdb
