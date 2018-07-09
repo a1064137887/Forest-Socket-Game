@@ -4,3 +4,9 @@ D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\直接利用Socket
 D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\直接利用SocketTCP开发的网络游戏CSharp\TCP客户端\obj\Debug\TCP客户端.csprojResolveAssemblyReference.cache
 D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\直接利用SocketTCP开发的网络游戏CSharp\TCP客户端\obj\Debug\TCP客户端.exe
 D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\直接利用SocketTCP开发的网络游戏CSharp\TCP客户端\obj\Debug\TCP客户端.pdb
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\TCP客户端\bin\Debug\TCP客户端.exe.config
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\TCP客户端\bin\Debug\TCP客户端.exe
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\TCP客户端\bin\Debug\TCP客户端.pdb
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\TCP客户端\obj\Debug\TCP客户端.csprojResolveAssemblyReference.cache
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\TCP客户端\obj\Debug\TCP客户端.exe
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\TCP客户端\obj\Debug\TCP客户端.pdb
