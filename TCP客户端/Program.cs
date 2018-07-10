@@ -23,12 +23,14 @@ namespace TCP客户端
             while(true)
             {
                 string str = Console.ReadLine();
+                if(str == "c")
+                {
+                    clientSocket.Close();
+                    return;
+                }
                 clientSocket.Send(Encoding.UTF8.GetBytes(str));
             }
 
-
-            Console.ReadKey();
-            clientSocket.Close();
         }
     }
 }

@@ -43,11 +43,27 @@ namespace TCP服务器端
 
         static void ReceiveCallBack(IAsyncResult ar)
         {
-            Socket clientSocket = ar.AsyncState as Socket;
-            int count = clientSocket.EndReceive(ar);
-            string msg = Encoding.UTF8.GetString(dataBuffer,0,count);
-            Console.WriteLine("从客户端接收的数据 ： " + msg);
-            clientSocket.BeginReceive(dataBuffer, 0, 1024, SocketFlags.None, ReceiveCallBack, clientSocket);
+            Socket clientSocket = null;
+            try
+            {
+                clientSocket = ar.AsyncState as Socket;
+                int count = clientSocket.EndReceive(ar);
+                if(count == 0)
+                {
+                    clientSocket.Close();
+                    return;
+                }
+                string msg = Encoding.UTF8.GetString(dataBuffer, 0, count);
+                Console.WriteLine("从客户端接收的数据 ： " + msg);
+                clientSocket.BeginReceive(dataBuffer, 0, 1024, SocketFlags.None, ReceiveCallBack, clientSocket);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                if(clientSocket != null)
+                    clientSocket.Close();
+            }
+
         }
 
 
