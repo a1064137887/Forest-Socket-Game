@@ -8,7 +8,7 @@ using System.Net;
 
 namespace TCP客户端
 {
-    class Program
+    class ClientProgram
     {
         static void Main(string[] args)
         {
@@ -20,17 +20,26 @@ namespace TCP客户端
             string msg = Encoding.UTF8.GetString(data);
             Console.WriteLine(msg);
 
-            while(true)
+            for(int i = 0; i < 100; i++)
+            {
+                clientSocket.Send(Message.GetBytes(i.ToString()));
+            }
+
+            while (true)
             {
                 string str = Console.ReadLine();
-                if(str == "c")
+                if (str == "c")
                 {
                     clientSocket.Close();
                     return;
                 }
-                clientSocket.Send(Encoding.UTF8.GetBytes(str));
+                clientSocket.Send(Message.GetBytes(str));
             }
 
         }
+
+
     }
+
+
 }

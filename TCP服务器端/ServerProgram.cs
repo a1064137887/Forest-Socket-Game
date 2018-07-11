@@ -8,9 +8,9 @@ using System.Net;
 
 namespace TCP服务器端
 {
-    class Program
+    class ServerProgram
     {
-
+        static Message message = new Message();
         static byte[] dataBuffer = new byte[1024];
         static void Main(string[] args)
         {
@@ -37,7 +37,7 @@ namespace TCP服务器端
             byte[] data = System.Text.Encoding.UTF8.GetBytes(msg);
             clientSocket.Send(data);
 
-            clientSocket.BeginReceive(dataBuffer, 0, 1024, SocketFlags.None, ReceiveCallBack, clientSocket);
+            clientSocket.BeginReceive(message.Data, message.StartIndex, message.RemainSize, SocketFlags.None, ReceiveCallBack, clientSocket);
             serverSocket.BeginAccept(AcceptCallBack, serverSocket);
         }
 
@@ -53,9 +53,11 @@ namespace TCP服务器端
                     clientSocket.Close();
                     return;
                 }
-                string msg = Encoding.UTF8.GetString(dataBuffer, 0, count);
-                Console.WriteLine("从客户端接收的数据 ： " + msg);
-                clientSocket.BeginReceive(dataBuffer, 0, 1024, SocketFlags.None, ReceiveCallBack, clientSocket);
+                message.AddCount(count);
+                message.ReadMessage();
+                //string msg = Encoding.UTF8.GetString(dataBuffer, 0, count);
+                //Console.WriteLine("从客户端接收的数据 ： " + msg);
+                clientSocket.BeginReceive(message.Data, message.StartIndex, message.RemainSize, SocketFlags.None, ReceiveCallBack, clientSocket);
             }
             catch(Exception ex)
             {
