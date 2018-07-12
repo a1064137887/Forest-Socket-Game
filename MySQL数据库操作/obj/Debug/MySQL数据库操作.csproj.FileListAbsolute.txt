@@ -1,0 +1,6 @@
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\MySQL数据库操作\bin\Debug\MySQL数据库操作.exe.config
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\MySQL数据库操作\obj\Debug\MySQL数据库操作.csprojResolveAssemblyReference.cache
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\MySQL数据库操作\bin\Debug\MySQL数据库操作.exe
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\MySQL数据库操作\bin\Debug\MySQL数据库操作.pdb
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\MySQL数据库操作\obj\Debug\MySQL数据库操作.exe
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\MySQL数据库操作\obj\Debug\MySQL数据库操作.pdb
