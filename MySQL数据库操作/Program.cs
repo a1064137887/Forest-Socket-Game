@@ -36,7 +36,7 @@ namespace MySQL数据库操作
             #region 数据库插入
             string username = "ddd";
             string passward = "444";
-            string cmdTxt = "insert into users set username ='" + username + "',passward='" + passward + "'";
+            string cmdTxt = "insert into users set username ='" + username + "',password='" + passward + "'";
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = sqlConnection;
             cmd.CommandText = cmdTxt;
