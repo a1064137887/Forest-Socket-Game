@@ -12,7 +12,7 @@ namespace MySQL数据库操作
         static void Main(string[] args)
         {
             //sql连接字符串
-            string sqlConStr = "Database = sikiedu;Data Source = 127.0.0.1;port = 3306;user id= root;Password = 123456";
+            string sqlConStr = "database = sikiedu;Data Source = 127.0.0.1;port = 3306;user id= root;Password = 123456";
             MySqlConnection sqlConnection = new MySqlConnection(sqlConStr);
 
             sqlConnection.Open();//打开连接
@@ -25,7 +25,7 @@ namespace MySQL数据库操作
             //    while (reader.Read())
             //    {
             //        string username = reader.GetString("username");
-            //        string passward = reader.GetString("passward");
+            //        string passward = reader.GetString("password");
             //        Console.WriteLine(username + "  :  " + passward);
             //    }
             //}
@@ -34,13 +34,13 @@ namespace MySQL数据库操作
             #endregion
 
             #region 数据库插入
-            string username = "ddd";
-            string passward = "444";
-            string cmdTxt = "insert into users set username ='" + username + "',password='" + passward + "'";
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = sqlConnection;
-            cmd.CommandText = cmdTxt;
-            cmd.ExecuteNonQuery();
+            //string username = "ddd";
+            //string passward = "444";
+            //string cmdTxt = "insert into users set username ='" + username + "',password='" + passward + "'";
+            //MySqlCommand cmd = new MySqlCommand();
+            //cmd.Connection = sqlConnection;
+            //cmd.CommandText = cmdTxt;
+            //cmd.ExecuteNonQuery();
             #endregion
 
             sqlConnection.Close();
