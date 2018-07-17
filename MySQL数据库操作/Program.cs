@@ -36,11 +36,30 @@ namespace MySQL数据库操作
             #region 数据库插入
             //string username = "ddd";
             //string passward = "444";
-            //string cmdTxt = "insert into users set username ='" + username + "',password='" + passward + "'";
+            ////string cmdTxt = "insert into users set username ='" + username + "',password='" + passward + "'";
+            //string cmdTxt = "insert into users set username = @un , password = @pwd";
             //MySqlCommand cmd = new MySqlCommand();
             //cmd.Connection = sqlConnection;
             //cmd.CommandText = cmdTxt;
+            //cmd.Parameters.AddWithValue("un", username);
+            //cmd.Parameters.AddWithValue("pwd", passward);
             //cmd.ExecuteNonQuery();
+            #endregion
+
+            #region 数据库删除
+
+            //MySqlCommand cmd = new MySqlCommand("delete from users where id = @id", sqlConnection);
+            //cmd.Parameters.AddWithValue("id", 1);
+            //cmd.ExecuteNonQuery();
+
+            #endregion
+
+            #region 数据库更新
+
+            //MySqlCommand cmd = new MySqlCommand("update users set password = @pwd where id = 2", sqlConnection);
+            //cmd.Parameters.AddWithValue("pwd", "yhr");
+            //cmd.ExecuteNonQuery();
+
             #endregion
 
             sqlConnection.Close();
