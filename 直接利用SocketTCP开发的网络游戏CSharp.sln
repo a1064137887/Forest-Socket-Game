@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCP客户端", "TCP客户�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySQL数据库操作", "MySQL数据库操作\MySQL数据库操作.csproj", "{0DD8739C-7BF7-4BFF-9AE2-14C4416FFE37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "游戏服务器端", "游戏服务器端\游戏服务器端.csproj", "{9EF1FD67-C475-4A81-AB67-0C500A54540F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0DD8739C-7BF7-4BFF-9AE2-14C4416FFE37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DD8739C-7BF7-4BFF-9AE2-14C4416FFE37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DD8739C-7BF7-4BFF-9AE2-14C4416FFE37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EF1FD67-C475-4A81-AB67-0C500A54540F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EF1FD67-C475-4A81-AB67-0C500A54540F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EF1FD67-C475-4A81-AB67-0C500A54540F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EF1FD67-C475-4A81-AB67-0C500A54540F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
