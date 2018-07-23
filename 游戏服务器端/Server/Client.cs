@@ -11,6 +11,7 @@ namespace GameServer.Server
     {
         private Socket clientSocket;
         private Server server;
+        private Message message;
         public Client() { }
         public Client(Socket clientSocket,Server server)
         {
@@ -20,7 +21,7 @@ namespace GameServer.Server
 
         public void Start()
         {
-            clientSocket.BeginReceive(null, 0, 0, SocketFlags.None, ReceiveCallBack, null);
+            clientSocket.BeginReceive(message.Data, message.StartIndex, message.RemainSize, SocketFlags.None, ReceiveCallBack, null);
         }
 
         public void Close()
@@ -42,7 +43,7 @@ namespace GameServer.Server
                 }
 
                 //TODO：处理数据
-                clientSocket.BeginReceive(null, 0, 0, SocketFlags.None, ReceiveCallBack, null);//重新打开监听
+                Start();//重新打开监听
             }
             catch(Exception e)
             {
