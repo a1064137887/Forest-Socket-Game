@@ -9,8 +9,15 @@ namespace GameServer.Controller
 {
     abstract class BaseController
     {
-        RequestCode requestCode = RequestCode.None;
+        private RequestCode requestCode = RequestCode.None;
+        public RequestCode RequestCode
+        {
+            get { return requestCode; }
+        }
 
-        public virtual void DefaultHandle();
+        public virtual string DefaultHandle(string data) 
+        {
+            return null;
+        }
     }
 }
