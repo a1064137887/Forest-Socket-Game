@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Common;
+using GameServer.Servers;
 
 namespace GameServer.Controller
 {
@@ -15,7 +16,7 @@ namespace GameServer.Controller
             get { return requestCode; }
         }
 
-        public virtual string DefaultHandle(string data) 
+        public virtual string DefaultHandle(string data,Client client,Server server) 
         {
             return null;
         }

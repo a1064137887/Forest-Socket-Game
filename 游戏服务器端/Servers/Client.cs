@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Sockets;
+using Common;
 
-namespace GameServer.Server
+namespace GameServer.Servers
 {
     class Client
     {
@@ -32,6 +33,7 @@ namespace GameServer.Server
             server.RemoveClient(this);
         }
 
+        //接收消息的回调
         private void ReceiveCallBack(IAsyncResult ar)
         {
             try
@@ -41,8 +43,7 @@ namespace GameServer.Server
                 {
                     Close();
                 }
-
-                //TODO：处理数据
+                message.ReadMessage(count,OnProcessMessage);
                 Start();//重新打开监听
             }
             catch(Exception e)
@@ -51,10 +52,15 @@ namespace GameServer.Server
                 Close();
             }
         }
+
+        //接收消息的回调
+        private void OnProcessMessage(RequestCode requestCode,ActionCode actionCode,string data)
+        {
+            server.HandleRequest(requestCode, actionCode, data, this);
+        }
  
 
     //class end
     }
-
 //namespace end
 }

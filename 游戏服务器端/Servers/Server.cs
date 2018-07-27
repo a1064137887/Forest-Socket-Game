@@ -6,20 +6,22 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 using GameServer.Controller;
+using Common;
 
-namespace GameServer.Server
+namespace GameServer.Servers
 {
     class Server
     {
         private Socket serverSocket;
         private IPEndPoint ipEndPoint;
         private List<Client> clientList;
-        private ControllerManager controllerManager = new ControllerManager();
+        private ControllerManager controllerManager;
 
         public Server() { }
         public Server(string ip,int port)
         {
             ipEndPoint = new IPEndPoint(IPAddress.Parse(ip), port);
+            controllerManager = new ControllerManager(this);
         }
 
         //通过ip和port设置该类的ipEndPoint
@@ -52,6 +54,17 @@ namespace GameServer.Server
             {
                 clientList.Remove(client);
             }
+        }
+
+        public void SendResponse(Client client,RequestCode requestCode,string data)
+        {
+            //TODO：给客户端响应
+        }
+
+        public void HandleRequest(RequestCode requestCode, ActionCode actionCode, string data, Client client)
+        {
+            //这样通过 Server 作为中介让 Client 调用 controllerManager ，降低耦合性
+            controllerManager.HandleRequest(requestCode, actionCode, data, client);
         }
 
     //class end

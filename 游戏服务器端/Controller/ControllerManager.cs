@@ -5,15 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using Common;
+using GameServer.Servers;
 
 namespace GameServer.Controller
 {
     class ControllerManager
     {
         private Dictionary<RequestCode, BaseController> controllerDic = new Dictionary<RequestCode, BaseController>();
-        public ControllerManager()
+        private Server server;
+        public ControllerManager(Server server)
         {
-
+            this.server = server;
+            Init();
         }
 
         private void Init()
@@ -23,22 +26,31 @@ namespace GameServer.Controller
             controllerDic.Add(defaultController.RequestCode, defaultController);
         }
 
-        public void HandleRequest(RequestCode requestCode,ActionCode actionCode,string data)
+        public void HandleRequest(RequestCode requestCode,ActionCode actionCode,string data,Client client)
         {
             BaseController controller;
             if(!controllerDic.TryGetValue(requestCode,out controller))
             {
                 return;
             }
+
+            //通过映射的方法调用 controller 中的方法
             string methodName = Enum.GetName(typeof(ActionCode), actionCode);
             MethodInfo methodInfo = controller.GetType().GetMethod(methodName);
             if(methodInfo == null)
             {
                 return;
             }
-            object[] paramaters = new object[] {data};
-            object o = methodInfo.Invoke(controller,paramaters);
+            object[] paramaters = new object[] {data,client};
+            object o = methodInfo.Invoke(controller,paramaters);//o为返回给客户端
+            if(o == null || string.IsNullOrEmpty(o as string))
+            {
+                return;
+            }
+            server.SendResponse(client, requestCode, o as string);
         }
+
+
 
     //class end
     }
