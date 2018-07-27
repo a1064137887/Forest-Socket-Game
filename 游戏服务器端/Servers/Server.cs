@@ -58,7 +58,7 @@ namespace GameServer.Servers
 
         public void SendResponse(Client client,RequestCode requestCode,string data)
         {
-            //TODO：给客户端响应
+            client.Send(requestCode, data);
         }
 
         public void HandleRequest(RequestCode requestCode, ActionCode actionCode, string data, Client client)
