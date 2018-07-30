@@ -1,1 +1,2 @@
 D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\游戏服务器端\bin\Debug\游戏服务器端.exe.config
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\游戏服务器端\obj\Debug\游戏服务器端.csprojResolveAssemblyReference.cache
