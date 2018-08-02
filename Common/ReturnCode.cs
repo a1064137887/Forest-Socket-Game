@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Common
 {
-    public enum RequestCode
+    public enum ReturnCode
     {
-        None,
-        User,
+        Success,
+        Fail,
     }
 }

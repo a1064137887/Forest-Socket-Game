@@ -23,6 +23,7 @@ namespace GameServer.Controller
         {
             DefaultController defaultController = new DefaultController();
             controllerDic.Add(defaultController.RequestCode, defaultController);
+            controllerDic.Add(RequestCode.User, new UserController());
         }
 
         public void HandleRequest(RequestCode requestCode,ActionCode actionCode,string data,Client client)
@@ -41,8 +42,8 @@ namespace GameServer.Controller
                 return;
             }
             object[] paramaters = new object[] {data,client};
-            object o = methodInfo.Invoke(controller,paramaters);//o为返回给客户端
-            if(o == null || string.IsNullOrEmpty(o as string))
+            object o = methodInfo.Invoke(controller, paramaters);//o为返回给客户端
+            if (o == null || string.IsNullOrEmpty(o as string))
             {
                 return;
             }

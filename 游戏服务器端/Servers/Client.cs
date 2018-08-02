@@ -16,12 +16,17 @@ namespace GameServer.Servers
         private Server server;
         private Message message;
         private MySqlConnection sqlConn;
+        public MySqlConnection SqlConn
+        {
+            get { return sqlConn; }
+        }
         public Client() { }
         public Client(Socket clientSocket,Server server)
         {
             this.clientSocket = clientSocket;
             this.server = server;
             sqlConn = ConnHelper.Connect();
+            message = new Message();
         }
 
         public void Start()
@@ -48,6 +53,7 @@ namespace GameServer.Servers
                 {
                     Close();
                 }
+                Console.WriteLine("接收到客户端的数据");
                 message.ReadMessage(count,OnProcessMessage);
                 Start();//重新打开监听
             }

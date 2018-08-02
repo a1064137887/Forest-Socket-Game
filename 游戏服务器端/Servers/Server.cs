@@ -14,7 +14,7 @@ namespace GameServer.Servers
     {
         private Socket serverSocket;
         private IPEndPoint ipEndPoint;
-        private List<Client> clientList;
+        private List<Client> clientList = new List<Client>();
         private ControllerManager controllerManager;
 
         public Server() { }
@@ -44,6 +44,8 @@ namespace GameServer.Servers
             Socket clientSocket = serverSocket.EndAccept(ar);
             Client client = new Client(clientSocket,this);
             clientList.Add(client);
+            client.Start();
+            Console.WriteLine("接收到一个客户端的连接，目前clientList中有" +clientList.Count+"个客户端");
         }
 
         public void RemoveClient(Client client)
