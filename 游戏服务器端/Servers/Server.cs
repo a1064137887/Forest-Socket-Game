@@ -44,8 +44,9 @@ namespace GameServer.Servers
             Socket clientSocket = serverSocket.EndAccept(ar);
             Client client = new Client(clientSocket,this);
             clientList.Add(client);
-            client.Start();
+            client.Start();//客户端打开监听
             Console.WriteLine("接收到一个客户端的连接，目前clientList中有" +clientList.Count+"个客户端");
+            //serverSocket.BeginAccept(AcceptCallBack, null);
         }
 
         public void RemoveClient(Client client)
@@ -58,6 +59,12 @@ namespace GameServer.Servers
             }
         }
 
+        /// <summary>
+        /// 在处理完客户端的请求之后发送响应
+        /// </summary>
+        /// <param name="client">接收响应的客户端</param>
+        /// <param name="actionCode">处理</param>
+        /// <param name="data">数据</param>
         public void SendResponse(Client client,ActionCode actionCode,string data)
         {
             client.Send(actionCode, data);

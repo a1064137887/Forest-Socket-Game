@@ -42,7 +42,7 @@ namespace GameServer.Controller
                 return;
             }
             object[] paramaters = new object[] {data,client};
-            object o = methodInfo.Invoke(controller, paramaters);//o为返回给客户端
+            object o = methodInfo.Invoke(controller, paramaters);//o为返回给客户端的信息
             if (o == null || string.IsNullOrEmpty(o as string))
             {
                 return;

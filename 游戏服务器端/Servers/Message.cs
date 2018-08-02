@@ -41,11 +41,11 @@ namespace GameServer.Servers
                 int count = BitConverter.ToInt32(data, 0);
                 if ((startIndex - 4) >= count)//如果当前消息是完整的
                 {
-                    RequestCode requestCode = (RequestCode)BitConverter.ToInt32(data, 4);//请求协议
-                    ActionCode actionCode = (ActionCode)BitConverter.ToInt32(data, 8);
+                    RequestCode requestCode = (RequestCode)BitConverter.ToInt32(data, 4);//请求
+                    ActionCode actionCode = (ActionCode)BitConverter.ToInt32(data, 8);//处理
                     string s = Encoding.UTF8.GetString(data, 12, count - 8);
                     Console.WriteLine("解析数据：" + s);
-                    processDataCallBack(requestCode, actionCode, s);
+                    processDataCallBack(requestCode, actionCode, s);//回调
                     Array.Copy(data, count + 4, data, 0, startIndex - count - 4);
                     startIndex -= (count + 4);
                 }
