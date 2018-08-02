@@ -1,2 +1,12 @@
 D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\游戏服务器端\bin\Debug\游戏服务器端.exe.config
-D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\游戏服务器端\obj\Debug\游戏服务器端.csprojResolveAssemblyReference.cache
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\游戏服务器端\bin\Debug\游戏服务器端.exe
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\游戏服务器端\bin\Debug\游戏服务器端.pdb
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\游戏服务器端\bin\Debug\Common.dll
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\游戏服务器端\bin\Debug\MySql.Data.dll
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\游戏服务器端\bin\Debug\Common.pdb
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\游戏服务器端\bin\Debug\MySql.Data.xml
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\游戏服务器端\obj\Debug\游戏服务器端.csprojAssemblyReference.cache
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\游戏服务器端\obj\Debug\游戏服务器端.csproj.CoreCompileInputs.cache
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\游戏服务器端\obj\Debug\游戏服务器端.csproj.CopyComplete
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\游戏服务器端\obj\Debug\游戏服务器端.exe
+D:\VSProject\直接利用SocketTCP开发的网络游戏CSharp\游戏服务器端\obj\Debug\游戏服务器端.pdb

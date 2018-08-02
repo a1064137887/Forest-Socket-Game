@@ -21,7 +21,6 @@ namespace GameServer.Controller
 
         private void Init()
         {
-            //TODO
             DefaultController defaultController = new DefaultController();
             controllerDic.Add(defaultController.RequestCode, defaultController);
         }
@@ -47,7 +46,7 @@ namespace GameServer.Controller
             {
                 return;
             }
-            server.SendResponse(client, requestCode, o as string);
+            server.SendResponse(client, actionCode, o as string); 
         }
 
 
