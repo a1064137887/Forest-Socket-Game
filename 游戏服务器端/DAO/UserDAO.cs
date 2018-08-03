@@ -43,7 +43,7 @@ namespace GameServer.DAO
             }
             catch(Exception ex)
             {
-                Console.WriteLine("在验证帐户时出现异常   " + ex);
+                Console.WriteLine("在 VerifyUser 时出现异常   " + ex);
             }
             finally
             {
@@ -54,7 +54,57 @@ namespace GameServer.DAO
 
         }
 
-    }
+        public bool GetUserByUsername(MySqlConnection mysqlConn, string username)
+        {
+            MySqlDataReader reader = null;
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = mysqlConn;
+                cmd.CommandText = "select * from user where username = @username";
+                cmd.Parameters.AddWithValue("username", username);
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("在 GetUserByUsername 出现异常   " + ex);
+            }
+            finally
+            {
+                if (reader != null) reader.Close();
+            }
+            return false;
 
+        }
+
+
+        public void AddUser(MySqlConnection mysqlConn,string username,string password)
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = "insert into user set username = @username , password = @password";
+                cmd.Connection = mysqlConn;
+                cmd.Parameters.AddWithValue("username", username);
+                cmd.Parameters.AddWithValue("password", password);
+                cmd.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("在 AddUser 出现异常   " + ex);
+            }
+        }
+
+
+
+    }
 
 }

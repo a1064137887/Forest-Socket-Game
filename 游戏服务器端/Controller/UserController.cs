@@ -18,7 +18,7 @@ namespace GameServer.Controller
             requestCode = RequestCode.User;
         }
 
-        public string Login(string data, Client client /*,Server server*/)
+        public string Login(string data, Client client ,Server server)
         {
             string[] strs = data.Split(',');
             string username = strs[0];
@@ -34,6 +34,21 @@ namespace GameServer.Controller
                 return ((int)ReturnCode.Success).ToString();
             }
 
+        }
+
+        public string Register(string data,Client client,Server server)
+        {
+            string[] strs = data.Split(',');
+            string username = strs[0];
+            string password = strs[1];
+            bool isHave = userDAO.GetUserByUsername(client.SqlConn, username);
+            if(isHave)//如果账号存在了
+            {
+                return ((int)ReturnCode.Fail).ToString();
+            }
+            //不存在的话就添加到数据库中
+            userDAO.AddUser(client.SqlConn, username, password);
+            return ((int)ReturnCode.Success).ToString();
         }
 
 

@@ -15,7 +15,7 @@ namespace GameServer.Servers
         private Socket clientSocket;
         private Server server;
         private Message message;
-        private MySqlConnection sqlConn;
+        private readonly MySqlConnection sqlConn;
         public MySqlConnection SqlConn
         {
             get { return sqlConn; }
