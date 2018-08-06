@@ -46,7 +46,7 @@ namespace GameServer.Servers
             clientList.Add(client);
             client.Start();//客户端打开监听
             Console.WriteLine("接收到一个客户端的连接，目前clientList中有" +clientList.Count+"个客户端");
-            //serverSocket.BeginAccept(AcceptCallBack, null);
+            serverSocket.BeginAccept(AcceptCallBack, null);
         }
 
         public void RemoveClient(Client client)
