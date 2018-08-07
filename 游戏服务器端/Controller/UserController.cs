@@ -13,6 +13,7 @@ namespace GameServer.Controller
     class UserController : BaseController
     {
         private UserDAO userDAO = new UserDAO();
+        private ResultDAO resultDAO = new ResultDAO();
         public UserController()
         {
             requestCode = RequestCode.User;
@@ -31,7 +32,10 @@ namespace GameServer.Controller
             }
             else
             {
-                return ((int)ReturnCode.Success).ToString();
+                
+                Result result = resultDAO.GetResultByID(client.SqlConn, user.Id);
+                //登录成功后要返回战绩信息，字符串格式化组拼
+                return string.Format("{0},{1},{2},{3}", ((int)ReturnCode.Success).ToString(), user.Username, result.totalCount, result.winCount);
             }
 
         }

@@ -50,7 +50,9 @@
     <Compile Include="Controller\ControllerManager.cs" />
     <Compile Include="Controller\DefaultController.cs" />
     <Compile Include="Controller\UserController.cs" />
+    <Compile Include="DAO\ResultDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="Model\Result.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
